@@ -33,6 +33,8 @@ A arquitetura do ecossistema é dividida em 4 camadas estruturadas:
 
 > 🔗 **Links do Projeto:**
 > * **Mapeamento de Arquitetura (Miro):** [Acessar Board do Miro](https://miro.com/app/board/uXjVGzbEYKg=/?share_link_id=821501184351&focusWidget=3458764663308479839)
+> * **Link demostrando funcionamento:** [Acessar Link do youtube](https://www.youtube.com/watch?v=8qEfzHyjzGI)
+> * **Link da demostração no wokwwi:** [Acessar Link do wokwi](https://wokwi.com/projects/466630829410259969)
 ---
 
 ## 💻 Plataforma Web (Frontend em React)
@@ -61,7 +63,30 @@ Esta é a **página central da disciplina de IoT**. É nesta view que ocorre a c
 * **Métricas Exibidas:** Consome e renderiza os dados históricos e instantâneos enviados pelo Smartwatch via backend (Temperatura, Batimentos Cardíacos (BPM), Pressão Sistólica/Diastólica e Passos Totais).
 * **Objetivo:** Permitir tanto ao paciente quanto à equipe médica credenciada o acompanhamento visual imediato do progresso biológico e o monitoramento preventivo de anomalias detectadas pelo ESP32.
 
----
+### 🔧 Como iniciar a plataforma de front-end
+
+1. Navegar até a pasta do frontend
+
+    Antes de executar qualquer comando, você precisa entrar na pasta onde o projeto React está localizado:
+
+    ```bash
+    cd frontend
+
+    ```
+
+2. Instalar as dependências do projeto
+
+   ```bash
+   npm install
+
+   ```
+
+3. Iniciar o servidor de desenvolvimento
+
+   ```bash
+   npm start
+
+    ```
 
 ## 🔧 Instruções de Uso e Configuração de Hardware
 
