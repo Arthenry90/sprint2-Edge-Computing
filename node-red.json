@@ -1,0 +1,137 @@
+[
+    {
+        "id": "192cd52f679815db",
+        "type": "tab",
+        "label": "Sprint 3 - careplus",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4e508160f0eb59bd",
+        "type": "debug",
+        "z": "192cd52f679815db",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "f58e2fabea57c025",
+        "type": "mqtt in",
+        "z": "192cd52f679815db",
+        "name": "HiveMQ In",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "23da40934684747d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 380,
+        "y": 300,
+        "wires": [
+            [
+                "4e508160f0eb59bd",
+                "83b13638f6d6c03c"
+            ]
+        ]
+    },
+    {
+        "id": "91e5a9bde1a209dc",
+        "type": "influxdb out",
+        "z": "192cd52f679815db",
+        "influxdb": "6ba0b6372217655e",
+        "name": "Banco de dados",
+        "measurement": "dados_saude",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "arturhs2019@gmail.com",
+        "bucket": "CarePlus_Dados",
+        "x": 980,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "83b13638f6d6c03c",
+        "type": "json",
+        "z": "192cd52f679815db",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 650,
+        "y": 220,
+        "wires": [
+            [
+                "91e5a9bde1a209dc"
+            ]
+        ]
+    },
+    {
+        "id": "23da40934684747d",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "c681ba6c58ed47f4a65231a0cf5faaac.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "5",
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6ba0b6372217655e",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "Banco Influx",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "https://us-east-1-1.aws.cloud2.influxdata.com",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "d182a54521159137",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-influxdb": "0.7.0"
+        }
+    }
+]
